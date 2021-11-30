@@ -6,7 +6,7 @@ import TabContext from "@mui/lab/TabContext";
 import NavbarTabs from "components/Header/NavbarTabs.jsx";
 
 const Navbar = ({children}) => {
-	const [value, setValue] = useState("1");
+	const [value, setValue] = useState("0");
 
 	const handleChange = (newValue) => {
 		setValue(newValue);
