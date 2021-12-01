@@ -7,8 +7,7 @@ const NavbarTabs = ({handleChange}) => {
 	const tabsData = getTabs();
 
 	const scrollToElement = (index) => {
-		// TODO need to change the value for the tabs
-		document.getElementById(`${tabsData[index - 1].id}-content`).scrollIntoView({behavior: "smooth"});
+		document.getElementById(`${tabsData[index].id}-content`).scrollIntoView({behavior: "smooth"});
 	};
 
 	const onChange = (event, newValue) => {
@@ -23,7 +22,7 @@ const NavbarTabs = ({handleChange}) => {
 			<TabList onChange={onChange}>
 				{
 					tabsData.map((tab, index) => {
-						return <Tab label={tab.label} value={(index + 1).toString()} key={index} />
+						return <Tab label={tab.label} value={(index).toString()} key={index} />
 					})
 				}
 			</TabList>

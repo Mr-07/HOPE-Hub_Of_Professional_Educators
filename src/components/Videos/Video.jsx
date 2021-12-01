@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function Home(props) {
+export default function Videos(props) {
     return (
         <React.Fragment>
-            <div id={`home-content`} style={{height: 'calc(100vh)', backgroundColor: 'red'}} />
+            <div id={`videos-content`} style={{height: 'calc(100vh)',backgroundColor: 'yellow'}} />
                 {/* <div></div>
                 <div></div> */}
         </React.Fragment>

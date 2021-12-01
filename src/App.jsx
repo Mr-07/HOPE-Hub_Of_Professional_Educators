@@ -1,6 +1,9 @@
 import React from "react";
 import Navbar from "components/Header/Navbar.jsx";
-import {Home, Videos, Courses, Instructor } from 'components/Home/Home.jsx';
+import Home from 'components/Home/Home.jsx';
+import Courses from "./components/Courses/Courses.jsx";
+import Videos from "./components/Videos/Video.jsx";
+import Instructor from "./components/Instructor/Instructor.jsx";
 
 
 const App = () => {
