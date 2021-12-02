@@ -1,18 +1,39 @@
-import React from "react";
-import Navbar from "components/Header/Navbar.jsx";
-import Home from 'components/Home/Home.jsx';
-import Courses from "./components/Courses/Courses.jsx";
-import Videos from "./components/Videos/Video.jsx";
-import Instructor from "./components/Instructor/Instructor.jsx";
+import React, { lazy, Suspense } from "react";
+import Navbar from "./components/Header/Navbar.jsx";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
+const Home = lazy(() => import("components/Home/Home.jsx"));
+const Courses = lazy(() => import('components/Courses/Courses.jsx'));
+const Videos = lazy(() => import('components/Videos/Video.jsx'));
+const Instructor = lazy(() => import('components/Instructor/Instructor.jsx'));
+
+function HOC(props) {
+    return (
+        <Suspense fallback={<h1>loading...</h1>}>
+            <props.component />
+        </Suspense>);
+}
 
 const App = () => {
     return (
-        <Navbar>
-            <Home />
-            <Videos />
-            <Courses />
-            <Instructor />
-        </Navbar>
+        <Router>
+            <div>
+                <Navbar />
+                <Switch>
+                    <Route exact path='/' render={() => {
+                        return (<HOC component={Home} />);
+                    }}/>
+                    <Route path='/courses' render={() => {
+                        return (<HOC component={Courses} />);
+                    }} />
+                    <Route path='/videos' render={() => {
+                        return (<HOC component={Videos} />);
+                    }} />
+                    <Route path='/instructor' render={() => {
+                        return (<HOC component={Instructor} />);
+                    }} />
+                </Switch>
+            </div>
+        </Router>
     );
 };
 
