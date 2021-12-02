@@ -5,7 +5,6 @@ import Courses from "./components/Courses/Courses.jsx";
 import Videos from "./components/Videos/Video.jsx";
 import Instructor from "./components/Instructor/Instructor.jsx";
 
-
 const App = () => {
     return (
         <Navbar>
