@@ -20,6 +20,10 @@ module.exports = {
                 use: "html-loader",
             },
             {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: "file-loader",
+            },
+            {
                 test: /\.scss$/,
                 use: ["style-loader", "css-loader", "sass-loader"],
             },
@@ -34,6 +38,7 @@ module.exports = {
     resolve: {
         alias: {
             'components': path.resolve(__dirname, "src/components/"),
+            'images': path.resolve(__dirname, "src/images/"),
             'common': path.resolve(__dirname, "src/common/"),
         },
     },

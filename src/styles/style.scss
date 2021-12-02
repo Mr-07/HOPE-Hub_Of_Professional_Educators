@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  font-family: 'Titillium Web', sans-serif;
 }
 
 .flex-container {
@@ -15,8 +16,6 @@ body {
 
 .container-fluid {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -25,7 +24,7 @@ body {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 25%;
+  width: 10%;
   margin: 0;
 }
 

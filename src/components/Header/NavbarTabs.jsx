@@ -1,7 +1,8 @@
-import Tab from "@mui/material/Tab";
-import TabList from "@mui/lab/TabList";
 import React from "react";
+import Tab from "@mui/material/Tab";
+import Tabs from '@mui/material/Tabs';
 import { getTabs } from 'common/utilities.jsx';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 const NavbarTabs = ({handleChange}) => {
 	const tabsData = getTabs();
@@ -19,13 +20,19 @@ const NavbarTabs = ({handleChange}) => {
 
 	return (
 		<div style={{display: 'inline-flex', flexGrow: '2', justifyContent: 'center'}}>
-			<TabList onChange={onChange}>
+			<Tabs onChange={onChange}>
 				{
-					tabsData.map((tab, index) => {
-						return <Tab label={tab.label} value={(index).toString()} key={index} />
-					})
+					tabsData.map((tab, index) =>
+						<React.Fragment>
+							{(tab.isIconPresent) ?
+								<Tab icon={<KeyboardArrowDownIcon />} iconPosition="right" label={tab.label} value={(index).toString()} key={index}/>
+								:
+								<Tab label={tab.label} value={(index).toString()} key={index} />
+							}
+						</React.Fragment>
+					)
 				}
-			</TabList>
+			</Tabs>
 		</div>
 	)
 }
