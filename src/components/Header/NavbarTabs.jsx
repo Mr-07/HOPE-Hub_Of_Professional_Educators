@@ -5,7 +5,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { Link } from "react-router-dom";
 import '../../styles/style.scss';
 
-const NavbarTabs = ({handleChange}) => {
+const NavbarTabs = () => {
 	const tabsData = getTabs();
 
 	return (
@@ -14,6 +14,7 @@ const NavbarTabs = ({handleChange}) => {
 				tabsData.map((tab, index) => 
 					(tab.isIconPresent) ?
 						<Button
+							style={{height: '45px', fontSize: '14px'}}
 							size="large"
 							key={tab.label}
 							variant="text"
@@ -24,6 +25,7 @@ const NavbarTabs = ({handleChange}) => {
 						</Button>
 						:
 						<Button
+							style={{height: '45px', fontSize: '14px'}}
 							size="large"
 							key={tab.label}
 							variant="text"
