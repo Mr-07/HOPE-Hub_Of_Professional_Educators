@@ -1,9 +1,7 @@
-import React from 'react';
-
 export function getTabs()  {
     return [
         {id: "home", label: "Home" , isIconPresent: false, link: "/"},
-        {id: "computer", label: "Computer-delivered IELTS" , isIconPresent: true, link: "/computer"},
+        {id: "computer", label: "Computer-delivered IELTS" , isIconPresent: true, link: "/computer-ielts"},
         {id: "practice", label: "Practice" , isIconPresent: true, link: "/practice"},
         {id: "results", label: "Results" , isIconPresent: true, link: "/results"},
         {id: "about", label: "About IELTS" , isIconPresent: true, link: "/about-ielts"},

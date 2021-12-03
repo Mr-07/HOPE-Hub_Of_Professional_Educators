@@ -11,7 +11,7 @@ const NavbarTabs = () => {
 	return (
 		<div style={{display: 'inline-flex', flexGrow: '2', justifyContent: 'center'}}>
 			{
-				tabsData.map((tab, index) => 
+				tabsData.map((tab, index) =>
 					(tab.isIconPresent) ?
 						<Button
 							style={{height: '45px', fontSize: '14px'}}

@@ -5,6 +5,7 @@ const Home = lazy(() => import("components/Home/Home.jsx"));
 const Courses = lazy(() => import('components/Courses/Courses.jsx'));
 const Videos = lazy(() => import('components/Videos/Video.jsx'));
 const Instructor = lazy(() => import('components/Instructor/Instructor.jsx'));
+const ComputerIelts = lazy(() => import('components/ComputerIelts/ComputerIelts.jsx'));
 
 function HOC(props) {
     return (
@@ -21,6 +22,9 @@ const App = () => {
                 <Switch>
                     <Route exact path='/' render={() => {
                         return (<HOC component={Home} />);
+                    }}/>
+                    <Route path='/computer-ielts' render={() => {
+                        return (<HOC component={ComputerIelts} />);
                     }}/>
                     <Route path='/courses' render={() => {
                         return (<HOC component={Courses} />);

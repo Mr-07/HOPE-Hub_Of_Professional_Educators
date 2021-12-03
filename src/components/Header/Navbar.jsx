@@ -6,7 +6,7 @@ import NavbarTabs from "components/Header/NavbarTabs.jsx";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-	
+
 	return (
 		<React.Fragment>
 			<div className="flex-container" style={{position: 'fixed', width: "100%"}}>
