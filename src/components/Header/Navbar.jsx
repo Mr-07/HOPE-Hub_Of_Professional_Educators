@@ -9,7 +9,7 @@ const Navbar = () => {
 
 	return (
 		<React.Fragment>
-			<div className="flex-container" style={{position: 'fixed', width: "100%"}}>
+			<div className="flex-container" style={{position: 'fixed', width: "100%", zIndex: '10000'}}>
 				<Box sx={{ width: "100%", typography: "body1", backgroundColor: "white" }}>
 					<Box sx={{width: '98vw', display: 'flex'}}>
 						<div className={`navbar-div`} style={{ fontWeight: 700 }}>

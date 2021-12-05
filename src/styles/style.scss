@@ -1,37 +1,63 @@
 body {
-  margin: 0;
-  font-family: 'Titillium Web', sans-serif;
-  font-size: 1.2rem;
+    margin: 0;
+    font-family: "Titillium Web", sans-serif;
+    font-size: 1.2rem;
 }
 
 .flex-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  color: #333;
-
-  div {
-    font-size: 20px;
-  }
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #333;
+    div {
+        font-size: 20px;
+    }
 }
 
 .container-fluid {
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .navbar-div {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 10%;
-  margin: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    margin: 0;
 }
 
 .card-container {
-  display: flex;
-  height: calc(90vh - 20px);
-  flex-direction: row;
+    display: flex;
+    height: calc(90vh - 20px);
+    flex-direction: row;
 }
 
+#hopeAnimate {
+    animation-name: example;
+    animation-duration: 4s;
+    font-size: 6rem;
+    left: 300px;
+    top: 40%;
+    position: relative;
+}
+
+@keyframes example {
+    0% {
+        left: -200px;
+        top: 40%;
+        font-size: 12rem;
+    }
+    100% {
+        left: 300px;
+        top: 40%;
+        font-size: 6rem;
+    }
+}
+
+.review-listing {
+    background-color: lightgrey;
+    height: 30vh;
+    text-align: center;
+}
