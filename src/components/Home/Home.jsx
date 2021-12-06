@@ -1,16 +1,13 @@
-import CarouselComponent from "./CarouselComponent.jsx";
+import home from 'images/Home.jpeg';
 import React from "react";
-import '../../styles/style.scss';
-import { getReviews, getHopeInfo } from "../../common/utilities.jsx";
+
 
 export default function Home() {
     return (
-        <React.Fragment>
-            <div id={`home-content`} style={{ height: 'calc(70vh)', backgroundColor: 'grey' }}>
-                <div id='hopeAnimate'>HOPE</div>
+        <>
+            <div id={`home-content`}>
+                <img src={home} style={{height: '100%'}}/>
             </div>
-            <CarouselComponent getInfo={ getHopeInfo } />
-            <CarouselComponent getInfo={getReviews} isReview={true} />
-        </React.Fragment>
+        </>
     )
 }
