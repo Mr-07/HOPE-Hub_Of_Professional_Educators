@@ -15,7 +15,17 @@
   \**************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Home)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nfunction Home(props) {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    id: `home-content`,\n    style: {\n      height: 'calc(100vh)',\n      backgroundColor: 'red'\n    }\n  }));\n}\n\n//# sourceURL=webpack://hope/./src/components/Home/Home.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Home)\n/* harmony export */ });\n/* harmony import */ var images_Home_jpeg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! images/Home.jpeg */ \"./src/images/Home.jpeg\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nfunction Home() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(\"div\", {\n    id: `home-content`\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(\"img\", {\n    src: images_Home_jpeg__WEBPACK_IMPORTED_MODULE_0__[\"default\"],\n    style: {\n      height: '100%'\n    }\n  })));\n}\n\n//# sourceURL=webpack://hope/./src/components/Home/Home.jsx?");
+
+/***/ }),
+
+/***/ "./src/images/Home.jpeg":
+/*!******************************!*\
+  !*** ./src/images/Home.jpeg ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"8070307c8acd187b8772a7271ef6849c.jpeg\");\n\n//# sourceURL=webpack://hope/./src/images/Home.jpeg?");
 
 /***/ })
 
