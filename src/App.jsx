@@ -6,6 +6,7 @@ import Loader from "common/Loader.jsx";
 const Home = lazy(() => import("components/Home/Home.jsx"));
 const Videos = lazy(() => import('components/Videos/Video.jsx'));
 const ComputerIelts = lazy(() => import('components/ComputerIelts/Page.jsx'));
+const BandCalculator = lazy(() => import('components/BandCalculator/BandCalculator.jsx'));
 
 const App = () => {
     return (
@@ -17,11 +18,11 @@ const App = () => {
                         <Route exact path='/' component={Home} />
                         <Route path='/computer-ielts' component={ComputerIelts}/>
                         <Route path='/videos' component={Videos} />
+                        <Route path="/band-calculator" component={BandCalculator} />
                     </Switch>
                 </div>
             </Router>
         </Suspense>
-
     );
 };
 

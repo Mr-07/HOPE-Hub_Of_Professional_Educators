@@ -19,7 +19,11 @@ const Navbar = () => {
 						</div>
 						<NavbarTabs />
 						<div className={`navbar-div`}>
-							<Button variant="contained">{`Contact Us`}</Button>
+							<Button variant="contained">
+								<Link className='remove-link-prop' to='/band-calculator'>
+									{`Band Calculator`}
+								</Link>
+							</Button>
 						</div>
 					</Box>
 				</Box>
