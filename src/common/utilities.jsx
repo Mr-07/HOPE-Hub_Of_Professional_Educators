@@ -22,3 +22,12 @@ export function getHopeInfo() {
         { review: "This is the center of great knowledge and will provide you learning at low cost than others." }
     ];
 }
+
+export function getScoresInBandObj() {
+    return {
+        listeningScoreInBand: 0,
+        readingScoreInBand: 0,
+        writingScoreInBand: 0,
+        speakingScoreInBand: 0
+    };
+}
