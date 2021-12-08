@@ -1,5 +1,5 @@
-import "../../styles/style.scss";
 import Box from "@mui/material/Box";
+import "../../styles/style.scss";
 import React from "react";
 import Button from '@mui/material/Button';
 import NavbarTabs from "components/Header/NavbarTabs.jsx";
