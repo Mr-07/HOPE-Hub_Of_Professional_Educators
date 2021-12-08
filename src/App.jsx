@@ -4,7 +4,7 @@ import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Loader from "common/Loader.jsx";
 
 const Home = lazy(() => import("components/Home/Home.jsx"));
-const Videos = lazy(() => import('components/Videos/Video.jsx'));
+const IELTS = lazy(() => import('components/IELTS/Page.jsx'));
 const ComputerIelts = lazy(() => import('components/ComputerIelts/Page.jsx'));
 const BandCalculator = lazy(() => import('components/BandCalculator/BandCalculator.jsx'));
 
@@ -17,7 +17,7 @@ const App = () => {
                     <Switch>
                         <Route exact path='/' component={Home} />
                         <Route path='/computer-ielts' component={ComputerIelts}/>
-                        <Route path='/videos' component={Videos} />
+                        <Route path='/about-ielts' component={IELTS} />
                         <Route path="/band-calculator" component={BandCalculator} />
                     </Switch>
                 </div>

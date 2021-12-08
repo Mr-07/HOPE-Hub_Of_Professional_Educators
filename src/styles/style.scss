@@ -128,6 +128,7 @@ img {
 
 .card-title-with-description {
   font-size: 2rem;
+  margin-top: 2rem;
   font-weight: bold;
 }
 
@@ -150,4 +151,16 @@ img {
 .remove-link-prop:hover {
     text-decoration: none;
     color: white;
+}
+
+.description--with---space {
+  padding-top: 1rem;
+  margin-bottom: 0;
+}
+
+.flex--container--with--row {
+  display: flex;
+  align-items: center;
+  // padding-top: 1rem;
+  flex-direction: row;
 }

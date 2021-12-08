@@ -4,6 +4,7 @@ import React from "react";
 import Button from '@mui/material/Button';
 import NavbarTabs from "components/Header/NavbarTabs.jsx";
 import { Link } from "react-router-dom";
+import Logo from 'images/Logo.svg';
 
 const Navbar = () => {
 
@@ -14,7 +15,9 @@ const Navbar = () => {
 					<Box sx={{width: '98vw', display: 'flex'}}>
 						<div className={`navbar-div`} style={{ fontWeight: 700 }}>
 							<Link to="/" style={{ textDecoration: 'none', color: "black" }}>
-								{`HOPE`}
+								<div style={{width: '20px', height: '25px'}}>
+									<img src={Logo} />
+								</div>
 							</Link>
 						</div>
 						<NavbarTabs />
