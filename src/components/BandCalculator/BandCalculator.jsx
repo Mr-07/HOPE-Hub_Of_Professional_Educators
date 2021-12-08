@@ -9,19 +9,28 @@ export default function BandCalculator() {
     const [writingScore, setWritingScore] = useState(0);
     const [scoreObj, setScoreObj] = useState(getScoresInBandObj());
     
+    const isValid = (score, scoreType) => {
+        if (!(score >= 0 && score <= 40)) {
+            document.getElementById(scoreType).classList.add('error');
+            return false;
+        } else {
+            document.getElementById(scoreType).classList.remove('error');
+            return true;
+        }
+    };
+    
     const calBand = (score, scoreType) => {
-        isValid(score, scoreType);
+        if (isValid(score, scoreType) === false) {
+            return false;
+        }
         const ref = parseFloat((score / 4.4).toString()).toFixed(2);
         return (((ref * 100) % 100) > 75 ? Math.ceil(ref) : Math.floor(ref));
     };
     
     const calculateBand = () => {
         const obj = {};
-        const keys = Object.keys(scoreObj);
-        
-        for (let i = 0; i < keys.length; i++) {
-            
-            const scoreType = (keys[i]).replace('InBand', '');
+        for (const key in scoreObj) {
+            const scoreType = key.replace('InBand', '');
             const score = (() => {
                 switch (scoreType) {
                     case 'listeningScore':
@@ -34,23 +43,13 @@ export default function BandCalculator() {
                         return calBand(writingScore, scoreType);
                 }
             })();
-            if (!score) {
+            if (score === false) {
                 alert('Invalid Score Entered for ' + scoreType);
                 return;
             }
-            obj[keys[i]] = score;
+            obj[key] = score;
         }
         setScoreObj(obj);
-    };
-    
-    const isValid = (score, scoreType) => {
-        if (!(score >= 0 && score <= 40)) {
-            document.getElementById(scoreType).classList.add('error');
-            return false;
-        } else {
-            document.getElementById(scoreType).classList.remove('error');
-            return true;
-        }
     };
     
     const resetScore = () => {
