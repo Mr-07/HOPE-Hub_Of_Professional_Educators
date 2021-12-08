@@ -3,6 +3,7 @@ import { Button } from "@material-ui/core";
 import { getTabs } from 'common/utilities.jsx';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { Link } from "react-router-dom";
+import '../../styles/style.scss';
 
 const NavbarTabs = () => {
 	const tabsData = getTabs();
