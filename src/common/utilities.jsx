@@ -4,8 +4,7 @@ export function getTabs()  {
         {id: "computer", label: "Computer-delivered IELTS" , isIconPresent: false, link: "/computer-ielts"},
         {id: "practice", label: "Practice" , isIconPresent: true, link: "/practice"},
         {id: "results", label: "Results" , isIconPresent: true, link: "/results"},
-        {id: "about", label: "About IELTS" , isIconPresent: true, link: "/about-ielts"},
-        {id: "videos", label: "Video Lectures" , isIconPresent: false, link: "/videos"}
+        {id: "ielts", label: "IELTS" , isIconPresent: true, link: "/about-ielts"},
     ];
 }
 

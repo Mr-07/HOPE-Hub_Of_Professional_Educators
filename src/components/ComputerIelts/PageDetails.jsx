@@ -15,7 +15,7 @@ export function getPageDetails() {
             splitClass: 'split--introduction',
             descriptionClass: 'introduction--desc',
             containerClass: 'container--block bg--darkgrey',
-            description: 'Results in 2-5 days. Now available in India',
+            descriptionPoints: ['Results in 2-5 days. Now available in India'],
 
         },
         {
@@ -28,7 +28,7 @@ export function getPageDetails() {
             titleClass: 'card-title-with-description',
             containerClass: 'container--block bg--light',
             title: 'Computer-delivered IELTS is available 3 times a day, 7 days a week',
-            description: 'For almost 30 years, IELTS has been a paper-based English test that people have used to achieve their work, study and migration dreams. But you asked for more choice – and we’ve listened. Meet computer-delivered IELTS: the same IELTS test you know, delivered via computer, with multiple test sessions a day and fast results.',
+            descriptionPoints: ['For almost 30 years, IELTS has been a paper-based English test that people have used to achieve their work, study and migration dreams. But you asked for more choice – and we’ve listened. Meet computer-delivered IELTS: the same IELTS test you know, delivered via computer, with multiple test sessions a day and fast results.'],
         },
         {
             id: 'centres',

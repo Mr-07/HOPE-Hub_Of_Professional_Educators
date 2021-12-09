@@ -22,7 +22,7 @@ function Card({ content }) {
                         descriptionClass={`${content.descriptionClass}`}
                         points={'points' in content ? content.points : null}
                         accordions={'accordions' in content ? content.accordions : null}
-                        description={'description' in content ? content.description : null}
+                        description={'descriptionPoints' in content ? content.descriptionPoints: null}
                         taglineClass={'taglineClass' in content ? `${content.taglineClass}` : null}
                     />
                     {
