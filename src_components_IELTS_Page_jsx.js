@@ -7,7 +7,7 @@
  * or disable the default devtool with "devtool: false".
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
-(self["webpackChunkhope"] = self["webpackChunkhope"] || []).push([["src_components_ComputerIelts_Page_jsx"],{
+(self["webpackChunkhope"] = self["webpackChunkhope"] || []).push([["src_components_IELTS_Page_jsx"],{
 
 /***/ "./src/common/Accordions.jsx":
 /*!***********************************!*\
@@ -26,16 +26,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var common_Image_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! common/Image.jsx */ \"./src/common/Image.jsx\");\n/* harmony import */ var common_ContentBlock_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! common/ContentBlock.jsx */ \"./src/common/ContentBlock.jsx\");\n\n\n\n\nfunction Card({\n  content\n}) {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"section\", {\n    key: content.id\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: `${content.containerClass}`\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: `${content.splitClass}`\n  }, content.imagePosition == 'left' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(common_Image_jsx__WEBPACK_IMPORTED_MODULE_1__[\"default\"], {\n    source: content.imageUrl,\n    imageClass: content.imageClass\n  }) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(common_ContentBlock_jsx__WEBPACK_IMPORTED_MODULE_2__[\"default\"], {\n    title: `${content.title}`,\n    titleClass: `${content.titleClass}`,\n    descriptionClass: `${content.descriptionClass}`,\n    points: 'points' in content ? content.points : null,\n    accordions: 'accordions' in content ? content.accordions : null,\n    description: 'descriptionPoints' in content ? content.descriptionPoints : null,\n    taglineClass: 'taglineClass' in content ? `${content.taglineClass}` : null\n  }), content.imagePosition == 'right' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(common_Image_jsx__WEBPACK_IMPORTED_MODULE_1__[\"default\"], {\n    source: content.imageUrl\n  }) : null)));\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Card);\n\n//# sourceURL=webpack://hope/./src/common/Card.jsx?");
-
-/***/ }),
-
-/***/ "./src/common/Centres.jsx":
-/*!********************************!*\
-  !*** ./src/common/Centres.jsx ***!
-  \********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getCentresData\": () => (/* binding */ getCentresData)\n/* harmony export */ });\n/* harmony import */ var images_Cities_Patiala_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! images/Cities/Patiala.jpg */ \"./src/images/Cities/Patiala.jpg\");\n/* harmony import */ var images_Cities_Amritsar_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! images/Cities/Amritsar.jpg */ \"./src/images/Cities/Amritsar.jpg\");\n\n\nfunction getCentresData() {\n  return [{\n    id: 'punjab',\n    header: 'Punjab',\n    cities: [...getPunjabData()]\n  }, {\n    id: 'haryana',\n    header: 'Haryana',\n    cities: [...getPunjabData()]\n  }];\n}\n\nfunction getPunjabData() {\n  return [{\n    id: 'patiala',\n    name: 'Patiala',\n    source: images_Cities_Patiala_jpg__WEBPACK_IMPORTED_MODULE_0__[\"default\"]\n  }, {\n    id: 'amritsar',\n    name: 'Amritsar',\n    source: images_Cities_Amritsar_jpg__WEBPACK_IMPORTED_MODULE_1__[\"default\"]\n  }];\n}\n\n//# sourceURL=webpack://hope/./src/common/Centres.jsx?");
 
 /***/ }),
 
@@ -79,63 +69,33 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "./src/components/ComputerIelts/Page.jsx":
-/*!***********************************************!*\
-  !*** ./src/components/ComputerIelts/Page.jsx ***!
-  \***********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var common_Card_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! common/Card.jsx */ \"./src/common/Card.jsx\");\n/* harmony import */ var _PageDetails_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PageDetails.jsx */ \"./src/components/ComputerIelts/PageDetails.jsx\");\n\n\n\n\nfunction Page() {\n  const pageDetails = (0,_PageDetails_jsx__WEBPACK_IMPORTED_MODULE_2__.getPageDetails)();\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    style: {\n      padding: '5rem'\n    }\n  }, pageDetails.map((data, index) => {\n    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(common_Card_jsx__WEBPACK_IMPORTED_MODULE_1__[\"default\"], {\n      content: data,\n      key: index\n    });\n  })));\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Page);\n\n//# sourceURL=webpack://hope/./src/components/ComputerIelts/Page.jsx?");
-
-/***/ }),
-
-/***/ "./src/components/ComputerIelts/PageDetails.jsx":
-/*!******************************************************!*\
-  !*** ./src/components/ComputerIelts/PageDetails.jsx ***!
-  \******************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getPageDetails\": () => (/* binding */ getPageDetails)\n/* harmony export */ });\n/* harmony import */ var images_frequency_1_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! images/frequency-1.jpg */ \"./src/images/frequency-1.jpg\");\n/* harmony import */ var images_comp_ielts_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! images/comp-ielts.jpg */ \"./src/images/comp-ielts.jpg\");\n/* harmony import */ var common_Centres_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! common/Centres.jsx */ \"./src/common/Centres.jsx\");\n\n\n\nfunction getPageDetails() {\n  return [{\n    id: 'introduction',\n    imageClass: null,\n    imagePosition: 'right',\n    imageUrl: images_comp_ielts_jpg__WEBPACK_IMPORTED_MODULE_1__[\"default\"],\n    taglineClass: 'tagline',\n    titleClass: 'card-title',\n    title: 'Take IELTS on computer',\n    splitClass: 'split--introduction',\n    descriptionClass: 'introduction--desc',\n    containerClass: 'container--block bg--darkgrey',\n    descriptionPoints: ['Results in 2-5 days. Now available in India']\n  }, {\n    id: 'frequency',\n    splitClass: 'split',\n    imageUrl: images_frequency_1_jpg__WEBPACK_IMPORTED_MODULE_0__[\"default\"],\n    imageClass: 'split-img',\n    imagePosition: 'left',\n    points: [...getFrequencyPoints()],\n    titleClass: 'card-title-with-description',\n    containerClass: 'container--block bg--light',\n    title: 'Computer-delivered IELTS is available 3 times a day, 7 days a week',\n    descriptionPoints: ['For almost 30 years, IELTS has been a paper-based English test that people have used to achieve their work, study and migration dreams. But you asked for more choice – and we’ve listened. Meet computer-delivered IELTS: the same IELTS test you know, delivered via computer, with multiple test sessions a day and fast results.']\n  }, {\n    id: 'centres',\n    splitClass: 'split',\n    accordions: [...(0,common_Centres_jsx__WEBPACK_IMPORTED_MODULE_2__.getCentresData)()],\n    titleClass: 'card-title-with-description',\n    containerClass: 'container--block bg--light',\n    title: 'Computer-delivered IELTS is available 3 times a day, 7 days a week'\n  }];\n}\n\nfunction getFrequencyPoints() {\n  return ['Results in 2-5 days', 'Testing up to 7 days a week', 'Free IELTS Masterclass', 'Free computer-delivered IELTS practice test'];\n}\n\n//# sourceURL=webpack://hope/./src/components/ComputerIelts/PageDetails.jsx?");
-
-/***/ }),
-
-/***/ "./src/images/Cities/Amritsar.jpg":
-/*!****************************************!*\
-  !*** ./src/images/Cities/Amritsar.jpg ***!
-  \****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"9af1b8e5066abfc4ca7d4740ca47cc61.jpg\");\n\n//# sourceURL=webpack://hope/./src/images/Cities/Amritsar.jpg?");
-
-/***/ }),
-
-/***/ "./src/images/Cities/Patiala.jpg":
+/***/ "./src/components/IELTS/Page.jsx":
 /*!***************************************!*\
-  !*** ./src/images/Cities/Patiala.jpg ***!
+  !*** ./src/components/IELTS/Page.jsx ***!
   \***************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"4ca352f2ae77f71a86c4e53b3a2a5193.jpg\");\n\n//# sourceURL=webpack://hope/./src/images/Cities/Patiala.jpg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var common_Card_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! common/Card.jsx */ \"./src/common/Card.jsx\");\n/* harmony import */ var _PageDetails_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PageDetails.jsx */ \"./src/components/IELTS/PageDetails.jsx\");\n\n\n\n\nfunction Page() {\n  const pageDetails = (0,_PageDetails_jsx__WEBPACK_IMPORTED_MODULE_2__.getPageDetails)();\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    style: {\n      padding: '5rem'\n    }\n  }, pageDetails.map((data, index) => {\n    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(common_Card_jsx__WEBPACK_IMPORTED_MODULE_1__[\"default\"], {\n      content: data,\n      key: index\n    });\n  })));\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Page);\n\n//# sourceURL=webpack://hope/./src/components/IELTS/Page.jsx?");
 
 /***/ }),
 
-/***/ "./src/images/comp-ielts.jpg":
-/*!***********************************!*\
-  !*** ./src/images/comp-ielts.jpg ***!
-  \***********************************/
+/***/ "./src/components/IELTS/PageDetails.jsx":
+/*!**********************************************!*\
+  !*** ./src/components/IELTS/PageDetails.jsx ***!
+  \**********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"56e86296d90f037b1f4632aabae6ccac.jpg\");\n\n//# sourceURL=webpack://hope/./src/images/comp-ielts.jpg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getPageDetails\": () => (/* binding */ getPageDetails)\n/* harmony export */ });\n/* harmony import */ var images_IELTS_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! images/IELTS.jpg */ \"./src/images/IELTS.jpg\");\n\nfunction getPageDetails() {\n  return [{\n    id: 'introduction',\n    imageClass: null,\n    imagePosition: 'right',\n    imageUrl: images_IELTS_jpg__WEBPACK_IMPORTED_MODULE_0__[\"default\"],\n    taglineClass: 'tagline',\n    titleClass: 'card-title',\n    title: 'IELTS',\n    splitClass: 'split--introduction',\n    descriptionClass: 'introduction--desc',\n    containerClass: 'container--block bg--darkgrey',\n    descriptionPoints: ['International English Language Testing System']\n  }, {\n    id: 'what_is_ielts',\n    splitClass: 'split',\n    imageClass: 'split-img',\n    imagePosition: 'left',\n    titleClass: 'card-title-with-description',\n    containerClass: 'container--block bg--light',\n    title: 'What is IELTS?',\n    description: 'IELTS is the International English Language Testing System. It’s the world’s most popular English language test for tertiary education, work and migration purposes. International students wanting to study at an Australian university are required to pass the IELTS test to show their English language abilities. The test can also be taken for work purposes or applying for residency. In a global partnership of language experts, IDP: IELTS Australia, the British Council and Cambridge English Language Assessment co-created IELTS. ',\n    descriptionPoints: [...getDescriptionPoints()],\n    descriptionClass: 'description--with---space'\n  }, {\n    id: 'why_ielts',\n    splitClass: 'split',\n    imageClass: 'split-img',\n    imagePosition: 'left',\n    titleClass: 'card-title-with-description',\n    containerClass: 'container--block bg--light',\n    title: 'Why take the IELTS test?',\n    descriptionPoints: ['IELTS is the International English Language Testing System. It’s the world’s most popular English language test for tertiary education, work and migration purposes. International students wanting to study at an Australian university are required to pass the IELTS test to show their English language abilities. The test can also be taken for work purposes or applying for residency. In a global partnership of language experts, IDP: IELTS Australia, the British Council and Cambridge English Language Assessment co-created IELTS. '],\n    descriptionClass: 'description--with---space'\n  }, {\n    id: 'fee_structure',\n    splitClass: 'split',\n    imageClass: 'split-img',\n    imagePosition: 'left',\n    titleClass: 'card-title-with-description',\n    containerClass: 'container--block bg--light',\n    title: 'IELTS test structure',\n    descriptionPoints: [...getFeeStructure()],\n    // accordions : [ ...getCentresData() ],\n    points: ['Academic', \"General Training\"],\n    descriptionClass: 'description--with---space'\n  }];\n}\n\nfunction getFrequencyPoints() {\n  return ['Results in 2-5 days', 'Testing up to 7 days a week', 'Free IELTS Masterclass', 'Free computer-delivered IELTS practice test'];\n}\n\nfunction getDescriptionPoints() {\n  return ['Millions of IELTS tests are taken each year in over 140 countries for study, work and migration purposes. Over 10,000 organisations including universities, immigration authorities and professional bodies recognise IELTS, which means it helps you reach your study and career goals faster.', 'IELTS is the only internationally recognised English language test where the speaking section of the test is held with an examiner in a private room so you will not be interrupted. Our examiners are fully qualified and follow rigorous global IELTS standards and are regularly monitored and re-certified.', 'IELTS content is developed by an international team of experts that do extensive research to ensure the test is fair and unbiased for all, regardless of nationality, gender, lifestyle or location.'];\n}\n\nfunction getFeeStructure() {\n  return ['Before applying, check the test format to determine the right module for you, as fees may apply for changing modules.', 'The IELTS test assesses four language skills - writing, reading, listening and speaking.', 'The listening, reading and writing sections are scheduled between 9.00 am and 12.30 pm. The speaking section is scheduled between 1.00 pm and 5.30 pm. All sections of the test are conducted in small rooms, providing you with a comfortable environment.', 'IELTS offers two modules:'];\n}\n\n//# sourceURL=webpack://hope/./src/components/IELTS/PageDetails.jsx?");
 
 /***/ }),
 
-/***/ "./src/images/frequency-1.jpg":
-/*!************************************!*\
-  !*** ./src/images/frequency-1.jpg ***!
-  \************************************/
+/***/ "./src/images/IELTS.jpg":
+/*!******************************!*\
+  !*** ./src/images/IELTS.jpg ***!
+  \******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"bc21c2d8f9b43ceb21d2732a297d3fb3.jpg\");\n\n//# sourceURL=webpack://hope/./src/images/frequency-1.jpg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"55911cdde4fbb90c10d7b785fc9942cf.jpg\");\n\n//# sourceURL=webpack://hope/./src/images/IELTS.jpg?");
 
 /***/ })
 
