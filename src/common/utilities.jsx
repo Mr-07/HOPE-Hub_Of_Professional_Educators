@@ -1,11 +1,10 @@
 export function getTabs()  {
     return [
-        { id: "home", label: "Home" , isIconPresent: false, link: "/" },
-        { id: "computer", label: "Computer-delivered IELTS" , isIconPresent: false, link: "/computer-ielts" },
-        { id: "practice", label: "Practice" , isIconPresent: true, link: "/practice" },
-        { id: "results", label: "Results" , isIconPresent: true, link: "/results" },
-        { id: "ielts", label: "IELTS", isIconPresent: true, link: "/about-ielts" },
-        { id: "bookAVideo", label: "Book A Video", isIconPresent: false, link: "/book-a-test" },
+        {id: "home", label: "Home" , isIconPresent: false, link: "#/"},
+        {id: "computer", label: "Computer-delivered IELTS" , isIconPresent: false, link: "#/computer-ielts"},
+        {id: "practice", label: "Practice" , isIconPresent: true, link: "#/practice"},
+        {id: "results", label: "Results" , isIconPresent: true, link: "#/results"},
+        {id: "ielts", label: "IELTS" , isIconPresent: true, link: "#/about-ielts"},
     ];
 }
 

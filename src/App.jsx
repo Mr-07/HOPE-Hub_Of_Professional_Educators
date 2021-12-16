@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from "react";
-import Navbar from "./components/Header/Navbar.jsx";
+import Header from "components/Header/Header.jsx";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Loader from "common/Loader.jsx";
 
@@ -14,7 +14,7 @@ const App = () => {
         <Suspense fallback={<Loader />}>
             <Router>
                 <div>
-                    <Navbar />
+                    <Header />
                     <Switch>
                         <Route exact path='/' component={Home} />
                         <Route path='/computer-ielts' component={ComputerIelts}/>

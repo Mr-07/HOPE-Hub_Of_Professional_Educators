@@ -1,10 +1,11 @@
 import React from 'react'
+import { Col } from 'react-bootstrap';
 
 function Image({ source, imageClass }) {
     return (
-        <div className={imageClass}>
+        <Col md={6} className={`${imageClass} child-full-width`}>
             <img src={ source } />
-        </div>
+        </Col>
     )
 }
 

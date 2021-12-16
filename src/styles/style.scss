@@ -98,10 +98,6 @@ img {
   @include direction($direction: column-reverse);
 }
 
-#home-content {
-  padding-top: 2rem;
-}
-
 @media (min-width: 40em) {
   .split, .split--introduction {
     flex-direction: row;
@@ -110,11 +106,10 @@ img {
   .split, .split--introduction > * {
     flex-basis: 100%;
   }
+}
 
-  .home-content {
-      padding-top: unset;
-  }
-
+#home-content {
+  height: 70%;
 }
 
 .split > * {
@@ -167,3 +162,35 @@ img {
 .error {
     border: 1px solid red;
 }
+
+.home-description {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  font-family: 'Anton', sans-serif;
+  padding: 0 0 0 2rem;
+  width: 95%;
+  color: whitesmoke;
+}
+
+.features {
+  display: grid;
+  border: 3px solid black;
+  grid-template-columns: auto auto auto auto auto;
+  grid-auto-rows: auto;
+  grid-gap: 2rem;
+  margin-top: 2rem;
+  padding: 2rem;
+}
+
+.child-full-width {
+  width: 100%;
+}
+
+.child-full-width-padding {
+  padding: 1rem;
+  width: 100%;
+}
+

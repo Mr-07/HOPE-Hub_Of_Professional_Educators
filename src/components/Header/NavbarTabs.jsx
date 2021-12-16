@@ -1,43 +1,21 @@
 import React from "react";
-import { Button } from "@material-ui/core";
 import { getTabs } from 'common/utilities.jsx';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import { Link } from "react-router-dom";
 import '../../styles/style.scss';
+import { Nav } from 'react-bootstrap';
 
-const NavbarTabs = () => {
+export default function NavbarTabs() {
 	const tabsData = getTabs();
+	console.log(`tabsData`, tabsData)
 
 	return (
-		<div style={{display: 'inline-flex', flexGrow: '2', justifyContent: 'center'}}>
+		<Nav className={`justify-content-center`} activeKey={`/`}>
 			{
-				tabsData.map((tab, index) =>
-					(tab.isIconPresent) ?
-						<Button
-							style={{height: '45px', fontSize: '14px'}}
-							size="large"
-							key={tab.label}
-							variant="text"
-							component={Link}
-							to={tab.link}
-							color="default">
-							{tab.label} <KeyboardArrowDownIcon />
-						</Button>
-						:
-						<Button
-							style={{height: '45px', fontSize: '14px'}}
-							size="large"
-							key={tab.label}
-							variant="text"
-							component={Link}
-							to={tab.link}
-							color="default"
-						> {tab.label}
-						</Button>
-				)
+				tabsData.map((tab, index) => {
+					return <Nav.Link href={tab.link} key={index} style={{marginLeft: '2rem'}}>
+								{tab.label}
+							</Nav.Link>
+				})
 			}
-		</div>
+		</Nav>
 	)
 }
-
-export default NavbarTabs;

@@ -3,8 +3,8 @@ import Amritsar from 'images/Cities/Amritsar.jpg';
 
 export function getCentresData() {
     return [
-        {id: 'punjab', header: 'Punjab', cities: [...getPunjabData()]},
-        {id: 'haryana', header: 'Haryana', cities: [...getPunjabData()]}
+        {id: 'punjab', header: 'Punjab', data: [...getPunjabData()]},
+        {id: 'haryana', header: 'Haryana', data: [...getPunjabData()]}
     ]
 }
 

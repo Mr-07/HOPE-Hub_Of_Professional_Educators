@@ -1,7 +1,7 @@
 import React from 'react'
 import Point from 'common/Point.jsx';
 import Accordions from 'common/Accordions.jsx';
-import { Accordion } from 'react-bootstrap';
+import { Accordion, Col } from 'react-bootstrap';
 import AccordionBody from 'components/ComputerIelts/AccordionBody.jsx';
 
 function ContentBlock({
@@ -11,14 +11,15 @@ function ContentBlock({
     accordions,
     description,
     taglineClass,
+    isImagePresent,
     descriptionClass,
 }) {
     return (
-        <div className={taglineClass}>
+        <Col md={isImagePresent ? 6 : 12} className={`${taglineClass} child-full-width-padding` }>
             <span className={titleClass}>{title}</span>
             {
                 (description) ?
-                    description.map((point, index) => {
+                    description.map((point) => {
                         return <p className={descriptionClass}>{point}</p>
                     })
                 :
@@ -39,20 +40,28 @@ function ContentBlock({
             }
             {
                 (accordions) ?
-                    <Accordion flush={true}>
-                        {
-                            accordions.map((accordion, index) => {
-                                return <Accordions header={accordion.header} key={index} eventKey={index}>
-                                    <AccordionBody data={accordion.cities} />
-                                </Accordions>
-                            })
-                        }
-                    </Accordion>
-
+                    <div style={{marginTop: '2rem'}}>
+                        <Accordion flush={true}>
+                            {
+                                accordions.map((accordion, index) => {
+                                    return 'body' in accordion ? <Accordions header={accordion.header} key={index} eventKey={index}>
+                                                                    <accordion.body />
+                                                                </Accordions>
+                                                                :
+                                                                <Accordions header={accordion.header} key={index} eventKey={index}>
+                                                                    <AccordionBody
+                                                                        data={accordion.data}
+                                                                        body={'body' in accordion ? accordion.body : null}
+                                                                    />
+                                                                </Accordions>
+                                })
+                            }
+                        </Accordion>
+                    </div>
                 :
                     null
             }
-        </div>
+        </Col>
     )
 }
 

@@ -1,4 +1,9 @@
 import ielts from 'images/IELTS.jpg';
+import Listening from 'components/IELTS/Listening.jsx'
+import Reading from 'components/IELTS/Reading.jsx'
+import Writing from 'components/IELTS/Writing.jsx'
+import Speaking from 'components/IELTS/Speaking.jsx';
+
 export function getPageDetails() {
     return [
         {
@@ -18,7 +23,6 @@ export function getPageDetails() {
             id: 'what_is_ielts',
             splitClass: 'split',
             imageClass: 'split-img',
-            imagePosition: 'left',
             titleClass: 'card-title-with-description',
             containerClass: 'container--block bg--light',
             title: 'What is IELTS?',
@@ -30,7 +34,6 @@ export function getPageDetails() {
             id: 'why_ielts',
             splitClass: 'split',
             imageClass: 'split-img',
-            imagePosition: 'left',
             titleClass: 'card-title-with-description',
             containerClass: 'container--block bg--light',
             title: 'Why take the IELTS test?',
@@ -41,12 +44,11 @@ export function getPageDetails() {
             id: 'fee_structure',
             splitClass: 'split',
             imageClass: 'split-img',
-            imagePosition: 'left',
             titleClass: 'card-title-with-description',
             containerClass: 'container--block bg--light',
             title: 'IELTS test structure',
             descriptionPoints: [...getFeeStructure()],
-            // accordions : [ ...getCentresData() ],
+            accordions : [ ...getExamStructure() ],
             points: ['Academic', "General Training"],
             descriptionClass: 'description--with---space'
         },
@@ -77,6 +79,14 @@ function getFeeStructure() {
         'The IELTS test assesses four language skills - writing, reading, listening and speaking.',
         'The listening, reading and writing sections are scheduled between 9.00 am and 12.30 pm. The speaking section is scheduled between 1.00 pm and 5.30 pm. All sections of the test are conducted in small rooms, providing you with a comfortable environment.',
         'IELTS offers two modules:'
+    ]
+}
+function getExamStructure() {
+    return [
+        {id: 'listening', body: Listening, header: 'Listening'},
+        {id: 'reading', body: Reading, header: 'Reading'},
+        {id: 'writing', body: Writing, header: 'Writing'},
+        {id: 'speaking', body: Speaking, header: 'Speaking'},
     ]
 }
 
