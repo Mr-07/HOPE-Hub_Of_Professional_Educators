@@ -10,7 +10,7 @@ export default function BandCalculator() {
     const [scoreObj, setScoreObj] = useState(getScoresInBandObj());
     
     const isValid = (score, scoreType) => {
-        if (!(score >= 0 && score <= 40)) {
+        if (!(score >= 0 && score <= 40) || score == '') {
             document.getElementById(scoreType).classList.add('error');
             return false;
         } else {
