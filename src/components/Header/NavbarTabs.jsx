@@ -9,15 +9,6 @@ export default function NavbarTabs() {
 	const tabsData = getTabs();
 
 	return (
-			// <Nav className={`justify-content-center`} activeKey={`/`}>
-			// </Nav>	{
-			//		tabsData.map((tab, index) => {
-			//			return <Nav.Link href={tab.link} key={index} style={{marginLeft: '2rem'}}>
-			//						{tab.label}
-			//					</Nav.Link>
-			//		})
-			//	}
-			//</Nav>
 		tabsData.map((tab, index) => {
 			return <Col className='marginTop-5' key={index} sm={tab.size}>
 				<Link className='remove-link-prop' to={tab.link}>

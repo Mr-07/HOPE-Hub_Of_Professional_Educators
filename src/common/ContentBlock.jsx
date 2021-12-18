@@ -19,8 +19,8 @@ function ContentBlock({
             <span className={titleClass}>{title}</span>
             {
                 (description) ?
-                    description.map((point) => {
-                        return <p className={descriptionClass}>{point}</p>
+                    description.map((point, index) => {
+                        return <p key={ index } className={descriptionClass}>{point}</p>
                     })
                 :
                     <p />

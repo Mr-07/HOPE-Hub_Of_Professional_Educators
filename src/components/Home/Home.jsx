@@ -21,8 +21,8 @@ export default function Home() {
                     <Row style={{marginTop: '2rem'}}>
                         {
                             features.map((feature, index) => {
-                                return <Col style={{height: '12rem'}} sm={6} md={4}>
-                                            <Card style={{height: '10rem', background: '#DFC370', color: 'black', fontWeight: 'bold'}}key={index}>
+                                return <Col style={{height: '12rem'}} sm={6} md={4} key={`${index}-2`}>
+                                            <Card style={{height: '10rem', background: '#DFC370', color: 'black', fontWeight: 'bold'}} key={index}>
                                                 <Card.Body style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                                                     <Card.Text >
                                                         {feature}

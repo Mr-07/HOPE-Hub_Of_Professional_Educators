@@ -16,7 +16,7 @@ function Listening() {
             <>
                 {
                     fancyPoints.map(({title, description}, index) => {
-                        return <p>
+                        return <p key={index}>
                                     <i>{title}</i>
                                     {description}
                                 </p>
