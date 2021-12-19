@@ -1,5 +1,6 @@
 import React, { lazy, Suspense } from "react";
 import Header from "components/Header/Header.jsx";
+import Footer from "components/Footer.jsx";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Loader from "common/Loader.jsx";
 
@@ -22,6 +23,7 @@ const App = () => {
                         <Route path="/band-calculator" component={BandCalculator} />
                         <Route path="/book-a-test" component={BookATest} />
                     </Switch>
+                    <Footer />
                 </div>
             </Router>
         </Suspense>

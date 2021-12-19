@@ -3,9 +3,10 @@ import React from "react";
 import NavbarTabs from "components/Header/NavbarTabs.jsx";
 import { Navbar, Container, Button, Nav } from 'react-bootstrap';
 import Logo from 'images/Logo.svg';
+import { Calculate } from "@mui/icons-material";
 
-const Header = () => {
 // 2F3355
+/* const Header = () => {
 
 	return (
 		<React.Fragment>
@@ -29,6 +30,23 @@ const Header = () => {
 			</div>
 		</React.Fragment>
 	);
-};
+}; */
+
+const Header = () => {
+	return (
+		<navbar style={{display: 'flex', flexDirection: 'row', height: '60px', alignItems: 'center', width: '100%'}}>
+			<span className={`brand--name`}>{`HOPE`}</span>
+			<div style={{display: 'flex', flexDirection: 'row', height: '100%', width: '80%',  alignItems: 'center'}}>
+				<ul><NavbarTabs /></ul>
+				<div className={`btn-nav-div`}>
+					<div className={`btn-login`}>{`Log in`}</div>
+				</div>
+			</div>
+			<div style={{display: 'none'}}>
+				<button>{'Heelo'}</button>
+			</div>
+		</navbar>
+	)
+}
 
 export default Header;
