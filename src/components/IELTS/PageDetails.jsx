@@ -1,4 +1,3 @@
-import ielts from 'images/IELTS.jpg';
 import Listening from 'components/IELTS/Listening.jsx'
 import Reading from 'components/IELTS/Reading.jsx'
 import Writing from 'components/IELTS/Writing.jsx'
@@ -10,7 +9,6 @@ export function getPageDetails() {
             id: 'introduction',
             imageClass: null,
             imagePosition: 'right',
-            imageUrl: ielts,
             taglineClass: 'tagline',
             titleClass: 'card-title',
             title: 'IELTS',

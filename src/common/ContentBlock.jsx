@@ -15,7 +15,7 @@ function ContentBlock({
     descriptionClass,
 }) {
     return (
-        <Col md={isImagePresent ? 6 : 12} className={`${taglineClass} child-full-width-padding` }>
+        <Col lg={isImagePresent ? 6 : 12} className={`${taglineClass} content-with-description` }>
             <span className={titleClass}>{title}</span>
             {
                 (description) ?
@@ -27,7 +27,7 @@ function ContentBlock({
             }
             {
                 (points) ?
-                    <div style={{paddingTop: '0.5rem'}}>
+                    <div>
                         {
                             points.map((point, index) => {
                                 return <Point text={point} key={index}/>

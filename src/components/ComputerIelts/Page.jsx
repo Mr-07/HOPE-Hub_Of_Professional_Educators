@@ -8,7 +8,7 @@ function Page() {
 
     return (
         <>
-            <Container style={{marginTop: `6rem`}}>
+            <Container fluid>
                 {
                     pageDetails.map((data, index) => {
                         return <Card content={data} key={index} />

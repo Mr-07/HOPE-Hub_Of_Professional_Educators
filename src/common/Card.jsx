@@ -5,7 +5,7 @@ import { Row } from 'react-bootstrap';
 
 function Card({ content }) {
     return (
-        <Row key={content.id} className={`justify-content-between`}>
+        <Row key={content.id} style={{padding: '2rem 5rem'}}>
             <div className={content.containerClass} style={{padding: 'unset'}}>
                 <div className={`${content.splitClass}`}>
                     {
