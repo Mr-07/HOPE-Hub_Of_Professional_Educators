@@ -39,7 +39,9 @@ module.exports = {
         alias: {
             'components': path.resolve(__dirname, "src/components/"),
             'images': path.resolve(__dirname, "src/images/"),
+            'icons': path.resolve(__dirname, "src/icons/"),
             'common': path.resolve(__dirname, "src/common/"),
+            'auth': path.resolve(__dirname, "src/auth/"),
         },
     },
 };

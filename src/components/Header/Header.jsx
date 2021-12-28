@@ -1,52 +1,51 @@
 import "../../styles/style.scss";
-import React from "react";
+import React, { useState } from "react";
 import NavbarTabs from "components/Header/NavbarTabs.jsx";
-import { Navbar, Container, Button, Nav } from 'react-bootstrap';
-import Logo from 'images/Logo.svg';
-import { Calculate } from "@mui/icons-material";
-
-// 2F3355
-/* const Header = () => {
-
-	return (
-		<React.Fragment>
-			<div className="flex-container" style={{position: 'fixed', width: "100%", zIndex: '10000'}}>
-				<Navbar collapseOnSelect expand={`lg`} bg={`dark`} variant={`dark`} fixed="top">
-					<Container fluid>
-						<Navbar.Brand href={`/`}>
-							{`HOPE`}
-						</Navbar.Brand>
-						<Navbar.Toggle />
-						<Navbar.Collapse style={{justifyContent: 'space-between'}}>
-							<NavbarTabs />
-							<Nav.Link href="#/band-calculator" >
-								<Button variant="outline-success">
-									{`Band Calculator`}
-								</Button>
-							</Nav.Link>
-						</Navbar.Collapse>
-					</Container>
-				</Navbar>
-			</div>
-		</React.Fragment>
-	);
-}; */
+import { Modal } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 
 const Header = () => {
 	return (
-		<navbar style={{display: 'flex', flexDirection: 'row', height: '60px', alignItems: 'center', width: '100%'}}>
+		<nav className={`navbar`}>
+			<Alert />
 			<span className={`brand--name`}>{`HOPE`}</span>
-			<div style={{display: 'flex', flexDirection: 'row', height: '100%', width: '80%',  alignItems: 'center'}}>
+			<div className={`nav-heading-with-btn`}>
 				<ul><NavbarTabs /></ul>
 				<div className={`btn-nav-div`}>
-					<div className={`btn-login`}>{`Log in`}</div>
+					<Link className='btn-login' to={`/login`}>
+						{`Log in `}
+					</Link>
 				</div>
 			</div>
-			<div style={{display: 'none'}}>
+			<div className={`btn-nav-sidebar`} >
 				<button>{'Heelo'}</button>
 			</div>
-		</navbar>
+		</nav>
 	)
 }
+
+function Alert() {
+	const [show, setShow] = useState(true);
+	const handleClose = () => setShow(false);
+
+	return (
+	  <>
+		<Modal
+		  show={show}
+		  onHide={handleClose}
+		  backdrop="static"
+		  keyboard={false}
+		>
+		  <Modal.Header closeButton>
+			<Modal.Title>Coming Soon</Modal.Title>
+		  </Modal.Header>
+		  <Modal.Body>
+			{'This site is under development will be available shortly.'}
+		  </Modal.Body>
+		</Modal>
+	  </>
+	);
+  }
+
 
 export default Header;
