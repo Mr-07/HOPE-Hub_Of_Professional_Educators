@@ -1,152 +1,94 @@
 import React, { useState } from 'react';
-import Table from 'react-bootstrap/Table';
-import { getScoresInBandObj } from 'common/utilities.jsx';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
+import Slider from '@mui/material/Slider';
+import calculator from 'images/calculator.svg';
+import Typography from '@mui/material/Typography';
+import { getScoresInBandObj, subjects } from 'common/utilities.jsx';
 
 export default function BandCalculator() {
-    const [listeningScore, setListeningScore] = useState(0);
-    const [readingScore, setReadingScore] = useState(0);
-    const [speakingScore, setSpeakingScore] = useState(0);
-    const [writingScore, setWritingScore] = useState(0);
-    const [scoreObj, setScoreObj] = useState(getScoresInBandObj());
-    
-    const isValid = (score, scoreType) => {
-        if (!(score >= 0 && score <= 40) || score == '') {
-            document.getElementById(scoreType).classList.add('error');
-            return false;
-        } else {
-            document.getElementById(scoreType).classList.remove('error');
-            return true;
-        }
+    const [overallBand, setOverallBand] = useState(0);
+    const [bandObj, setBandObj] = useState(getScoresInBandObj());
+
+    const calculateBand = (value, formulaNumber) => {
+        const ref = parseFloat((value / formulaNumber).toString()).toFixed(2);
+        return (((ref * 100) % 100) >= 75 ? Math.ceil(ref) : Math.floor(ref));
     };
-    
-    const calBand = (score, scoreType) => {
-        if (isValid(score, scoreType) === false) {
-            return false;
-        }
-        const ref = parseFloat((score / 4.4).toString()).toFixed(2);
-        return (((ref * 100) % 100) > 75 ? Math.ceil(ref) : Math.floor(ref));
-    };
-    
-    const calculateBand = () => {
-        const obj = {};
-        for (const key in scoreObj) {
-            const scoreType = key.replace('InBand', '');
-            const score = (() => {
-                switch (scoreType) {
-                    case 'listeningScore':
-                        return calBand(listeningScore, scoreType);
-                    case 'readingScore':
-                        return calBand(readingScore, scoreType);
-                    case 'speakingScore':
-                        return calBand(speakingScore, scoreType);
-                    default:
-                        return calBand(writingScore, scoreType);
-                }
-            })();
-            if (score === false) {
-                alert('Invalid Score Entered for ' + scoreType);
-                return;
-            }
-            obj[key] = score;
-        }
-        setScoreObj(obj);
-    };
-    
-    const resetScore = () => {
-        setListeningScore(0);
-        setReadingScore(0);
-        setSpeakingScore(0);
-        setWritingScore(0);
-        setScoreObj(getScoresInBandObj());
-    };
-    
+
+    const onSliderChange = (event, newValue) => {
+        bandObj[event.target.name] = calculateBand(newValue, 4.4);
+        setBandObj((prevState) => {
+            return {...prevState, ...bandObj};
+        });
+
+        let sumOfAllBands = 0; 
+        subjects.forEach(element => {
+            sumOfAllBands += bandObj[element];
+        });
+        
+        setOverallBand(calculateBand(sumOfAllBands, subjects.length));
+    }
+
     return (
-        <div style={{position: 'relative', width: '85%', top: '130px', left: '5%'}}>
-            <Table striped bordered hover>
-                <thead>
-                    <tr>
-                        <th colSpan='3' style={{backgroundColor: 'lightgray'}}><h2>Band Calculator</h2></th>
-                    </tr>
-                    <tr>
-                        <th></th>
-                        <th style={{width: '30%'}}>Number /40</th>
-                        <th>IELTS Band</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Listening Score</td>
-                        <td>
-                            <input
-                                id='listeningScore'
-                                type='number'
-                                value={listeningScore}
-                                onChange={(e) => {
-                                    setListeningScore(e.target.value);
-                                }}
-                                onBlur={(e) => { isValid(e.target.value, 'listeningScore'); }}
-                                />
-                        </td>
-                        <td>{ scoreObj['listeningScoreInBand'] }</td>
-                    </tr>
-                    <tr>
-                        <td>Reading Score</td>
-                        <td>
-                            <input
-                                id='readingScore'
-                                type='number'
-                                value={readingScore}
-                                onChange={(e) => {
-                                    setReadingScore(e.target.value)
-                                }}
-                                onBlur={(e) => { isValid(e.target.value, 'readingScore'); }}
-                                />
-                        </td>
-                        <td>{ scoreObj['readingScoreInBand'] }</td>
-                    </tr>
-                    <tr>
-                        <td>Writing Score</td>
-                        <td>
-                            <input
-                                id='writingScore'
-                                type='number'
-                                value={writingScore}
-                                onChange={(e) => {
-                                    setWritingScore(e.target.value)
-                                }}
-                                onBlur={(e) => { isValid(e.target.value, 'writingScore'); }}
-                                />
-                        </td>
-                        <td>{ scoreObj['writingScoreInBand'] }</td>
-                    </tr>
-                    <tr>
-                        <td>Speaking Score</td>
-                        <td>
-                            <input
-                                id='speakingScore'
-                                type='number'
-                                value={speakingScore}
-                                onChange={(e) => {
-                                    setSpeakingScore(e.target.value)
-                                }}
-                                onBlur={(e) => { isValid(e.target.value, 'speakingScore'); }}
-                                />
-                        </td>
-                        <td>{ scoreObj['speakingScoreInBand'] }</td>
-                    </tr>
-                    <tr>
-                        <td colSpan="3">
-                            <button onClick={calculateBand} style={{padding: '5px', marginRight: '5px'}}>
-                                Calculate Band Score
-                            </button>
-                            
-                            <button onClick={resetScore} style={{padding: '5px'}}>
-                                Reset Score
-                            </button>
-                        </td>
-                    </tr>
-                </tbody>
-            </Table>
-        </div>
+        <>
+            <Grid container >
+                <Grid item md={5} xs={12} pt={{ xs: 7 }} display={'flex'} justifyContent={'center'}>
+                    <img src={calculator} height={'70%'} />
+                </Grid>
+                <Grid item md={7} xs={12} pt={{ md: 10 }} pb={{md: 0, xs: 10}} display={{xs: 'flex', md: 'block'}} justifyContent={'center'}>
+                    <Paper elevation={7} sx={{width: "70%", minWidth:'300px'}}>
+                        <Grid container sx={{ borderRadius: 'inherit' }}>
+                            <Grid item xs={4} sx={{ borderRadius: 'inherit', backgroundColor: '#F2F2F2' }}>
+                                <Typography align={'center'} fontWeight={'bold'} variant={'h6'} sx={{borderRadius: 'inherit', backgroundColor: '#E6E6E6'}}>Subjects</Typography>
+                                <Box pt={4} pb={4}>
+                                    {
+                                        subjects.map((ele, i) => {
+                                            return <Typography key={i} pt={1} pb={1} pl={"30%"} display={'flex'} justifyContent={'flex-start'} >{ele}</Typography>
+                                        })
+                                    }
+                                </Box>
+                            </Grid>
+                            <Grid item xs={6} sx={{ backgroundColor: '#FFFFFF' }}>
+                                <Typography align={'center'} fontWeight={'bold'} variant={'h6'} sx={{backgroundColor: '#E6E6E6'}}>Marks</Typography>
+                                <Box pt={4} pb={4}>
+                                    {
+                                        subjects.map((ele, i) => {
+                                            return  <Box key={i} pt={{ xl: 1.4, xs: 0.1 }} display={'flex'} justifyContent={'center'}>
+                                                        <Slider 
+                                                            min={0}
+                                                            max={40}
+                                                            name={ele}
+                                                            size="small"
+                                                            defaultValue={0}
+                                                            aria-label="Default"
+                                                            valueLabelDisplay="auto"
+                                                            onChange={onSliderChange} 
+                                                            sx={{color: '#6C63FF', width: '70%'}}
+                                                        />
+                                                    </Box>
+                                        })
+                                    }
+                                </Box>
+                                <Typography align={'center'} fontWeight={'bold'} sx={{backgroundColor: '#E6E6E6'}}>Overall</Typography>
+                            </Grid>
+                            <Grid item xs={2} sx={{ borderRadius: 'inherit', backgroundColor: '#F2F2F2' }}>
+                                <Typography align={'center'} fontWeight={'bold'} variant={'h6'} sx={{borderRadius: 'inherit', backgroundColor: '#E6E6E6'}}>Band</Typography>
+                                <Box pt={4} pb={4}>
+                                    {
+                                        subjects.map((ele, i) => {
+                                            return  <Box key={i} p={{xl: 0.9, xs: 1.1}} display={'flex'} justifyContent={'center'}>
+                                                        <div className='dot'>{bandObj[`${ele}`]}</div>
+                                                    </Box>
+                                        })
+                                    }
+                                </Box>
+                                <Typography align={'center'} fontWeight={'bold'} sx={{borderRadius: 'inherit', backgroundColor: '#E6E6E6'}}>{overallBand}</Typography>
+                            </Grid>
+                        </Grid>
+                    </Paper>
+                </Grid>
+            </Grid>
+        </>
     )
 }

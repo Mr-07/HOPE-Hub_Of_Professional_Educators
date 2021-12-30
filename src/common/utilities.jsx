@@ -33,11 +33,18 @@ export function getHopeInfo() {
     ];
 }
 
+export const subjects = [
+    'Listening',
+    'Reading',
+    'Writing',
+    'Speaking',
+];
+
 export function getScoresInBandObj() {
     return {
-        listeningScoreInBand: 0,
-        readingScoreInBand: 0,
-        writingScoreInBand: 0,
-        speakingScoreInBand: 0
+        Listening: 0,
+        Reading: 0,
+        Writing: 0,
+        Speaking: 0
     };
 }
