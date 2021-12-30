@@ -1,9 +1,9 @@
 import React, { useRef } from "react";
-import { Container, Row, Col, Form } from 'react-bootstrap';
 import LoginImage from 'images/Login.svg';
 import { useAuth } from 'auth/AuthContext.js';
+import { Container, Row, Col, Form } from 'react-bootstrap';
 
-function Login() {
+function Login({history}) {
     const username = useRef();
     const password = useRef();
     const { login } = useAuth();
@@ -13,6 +13,7 @@ function Login() {
 
         try {
             await login(username.current.value, password.current.value)
+            history.push('/dashboard');
             console.log('login successfully');
         } catch {
             console.log('failed to login');

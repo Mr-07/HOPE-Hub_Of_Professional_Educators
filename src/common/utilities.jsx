@@ -1,11 +1,22 @@
+import { useAuth } from 'auth/AuthContext';
+
 export function getTabs()  {
-    return [
+    const { currentUser } = useAuth();
+    const navData = [
         {id: "home", label: "Home" , isIconPresent: false, link: "/", size: 1},
         // {id: "ielts", label: "IELTS" , isIconPresent: true, link: "/about-ielts", size: 1},
         {id: "computer", label: "CD-IELTS" , isIconPresent: false, link: "/computer-ielts", size: 2},
         {id: "contact_us", label: "Contact Us" , isIconPresent: true, link: "/contact-us", size: 1},
         {id: "band_calculator", label: "Band Calculator" , isIconPresent: true, link: "/band-calculator", size: 1},
     ];
+
+    if (currentUser) {
+        navData.push({
+            id: 'dashboard', label: 'Dashboard', link: '/dashboard'
+        })
+    }
+
+    return navData;
 }
 
 export function getReviews() {

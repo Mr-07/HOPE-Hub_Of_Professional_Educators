@@ -1,10 +1,11 @@
-import "../../styles/style.scss";
 import React, { useState } from "react";
 import NavbarTabs from "components/Header/NavbarTabs.jsx";
 import { Modal } from 'react-bootstrap';
 import { Link } from "react-router-dom";
+import { useAuth } from "auth/AuthContext";
 
-const Header = () => {
+const Header = (props) => {
+	const { currentUser } = useAuth();
 	return (
 		<nav className={`navbar`}>
 			<Alert />
@@ -12,9 +13,14 @@ const Header = () => {
 			<div className={`nav-heading-with-btn`}>
 				<ul><NavbarTabs /></ul>
 				<div className={`btn-nav-div`}>
-					<Link className='btn-login' to={`/login`}>
-						{`Log in `}
-					</Link>
+					{
+						!currentUser ?
+							<Link className='btn-login' to={`/login`}>
+								{`Log in `}
+							</Link>
+							:
+							<LogoutButton {...props} />
+					}
 				</div>
 			</div>
 			<div className={`btn-nav-sidebar`} >
@@ -45,7 +51,20 @@ function Alert() {
 		</Modal>
 	  </>
 	);
-  }
+}
+
+const LogoutButton = ({history}) => {
+    const { logout } = useAuth();
+    const logoutUser = async() => {
+        await logout();
+        history.push('/login');
+    }
+    return (
+        <div className={`btn-login`} onClick={logoutUser}>
+			{`Log out`}
+        </div>
+    )
+}
 
 
 export default Header;
