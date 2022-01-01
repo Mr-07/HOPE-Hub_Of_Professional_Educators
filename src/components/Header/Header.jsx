@@ -3,6 +3,7 @@ import NavbarTabs from "components/Header/NavbarTabs.jsx";
 import { Modal } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import { useAuth } from "auth/AuthContext";
+import MenuIcon from '@mui/icons-material/Menu';
 
 const Header = (props) => {
 	const { currentUser } = useAuth();
@@ -24,7 +25,7 @@ const Header = (props) => {
 				</div>
 			</div>
 			<div className={`btn-nav-sidebar`} >
-				<button>{'Heelo'}</button>
+				<MenuIcon/>
 			</div>
 		</nav>
 	)

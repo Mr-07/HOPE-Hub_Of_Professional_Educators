@@ -1,43 +1,44 @@
 import React from 'react'
-import { Container, Row, Col } from 'react-bootstrap';
-import { getTabs } from 'common/utilities.jsx';
+import Box from '@mui/material/Box';
+import gmail from 'images/gmail.svg';
+import Grid from '@mui/material/Grid';
 import { Link } from "react-router-dom";
+import facebook from 'images/facebook.svg';
+import instagram from 'images/instagram.svg';
+import Typography from '@mui/material/Typography';
 
 function Footer() {
-    const tabs = getTabs();
-    const firstPart = tabs.slice(0, Math.ceil(tabs.length / 2));
-    const secondPart = tabs.slice(firstPart.length);
     return (
-            <Container fluid style={{background: '#192534', height: '413px', padding: '3rem', display: 'flex', flexDirection: 'column'}} className={`align-items-center justify-content-center`}>
-                <Row style={{borderBottom: '1px solid white', padding: '2rem 0', width: '100%'}}>
-                    <Col md={4} className={`footer--links-div`}>
-                        {
-                            firstPart.map((tab, index) => {
-                                return <Link className='footer-links' to={tab.link} key={index}>
-                                            {tab.label}
-                                        </Link>
-                            })
-                        }
-                    </Col>
-                    <Col xs={4}>
-                        {
-                                <div className='footer--brand'>{`HOPE`}</div>
-                        }
-                    </Col>
-                    <Col md={4} className={`footer--links-div`} style={{padding: '0'}}>
-                        {
-                            secondPart.map((tab, index) => {
-                                return <Link className='footer-links' to={tab.link} key={index}>
-                                            {tab.label}
-                                        </Link>
-                            })
-                        }
-                    </Col>
-                </Row>
-                <Col xs={12} style={{display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white', paddingTop: '2rem'}}>
-                    {`© HOPE, Inc ${new Date().getFullYear()}. All rights reserved`}
-                </Col>
-            </Container>
+        <Grid container p={'2rem'} display={'flex'} height={'300px'} backgroundColor={'#192534'}>
+            <Grid item xs={6} sm={9} height={'100%'}>
+                <Box display={'flex'} p={'2rem 0'} flexDirection={{xs: 'column', sm: 'unset'}} borderBottom={'1px solid white'} height={'50%'}>
+                    <Box display={'flex'} justifyContent={'flex-start'} width={{xs: '100%', sm: '40%'}}>
+                        <Box width={'30%'} height={{xs: '100%', sm: '70%'}} display={'flex'} justifyContent={'center'} alignItems={'center'} borderRadius={'4px'} backgroundColor={'#E6E6E6'}>
+                            <Link className='footer-links' to={'/contact-us'}>Enroll</Link>
+                        </Box>
+                    </Box>
+                    <Box display={'flex'} justifyContent={{xs: 'flex-start', sm: 'center'}} color={'#FFFFFF'} fontSize={'28.4px'} width={{xs: '100%', sm: '70%'}}>HOPE</Box>
+                </Box>
+                <Box xs={12} display={'flex'} justifyContent={'flex-end'} flexDirection={'column'} height={'50%'} pl={{sm: '37%'}} color={'#FFFFFF'} >
+                    <Box display={'flex'} justifyContent={{xs: 'flex-start', sm: 'center'}} gap={'3%'} width={{xs: '36px', sm: '100%'}}>
+                        <img src={instagram}/>
+                        <img src={facebook}/>
+                        <img src={gmail}/>
+                    </Box>
+                    <Box display={'flex'} justifyContent={{xs: 'flex-start', sm: 'center'}} fontSize={{xs: '10px', sm: '12px', md: '14px'}}>
+                        {`© HOPE, Inc ${new Date().getFullYear()}. All rights reserved`}
+                    </Box>
+                </Box>
+            </Grid>
+            <Grid item xs={6} sm={3} display={'flex'} alignItems={'center'}>
+                <Box display={'flex'} flexDirection={'column'} justifyContent={'center'} p={{xs: '17%', lg: '10%'}} borderRadius={'80px 0px'} backgroundColor={'#E6E6E6'}>
+                    <Typography fontSize={{xs: '10px', sm: '12px', md: '14px', lg: '16px'}}>Aman Sharma</Typography>
+                    <Typography fontSize={{xs: '10px', sm: '12px', md: '14px', lg: '16px'}}>SCO-13 Second Floor Leela Bhawan</Typography>
+                    <Typography fontSize={{xs: '10px', sm: '12px', md: '14px', lg: '16px'}}>Patiala, Punjab 147001</Typography>
+                    <Typography fontSize={{xs: '10px', sm: '12px', md: '14px', lg: '16px'}}>+91 9888022552</Typography>
+                </Box>
+            </Grid>
+        </Grid>
     )
 }
 

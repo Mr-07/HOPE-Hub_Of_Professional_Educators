@@ -177,6 +177,7 @@ img {
 	width: 20%;
 	display: flex;
 	justify-content: center;
+  padding-left: 10%;
 }
 
 .btn-login {
@@ -237,24 +238,7 @@ img {
 
 .footer-links {
   text-decoration: none;
-	color: white;
-}
-
-.footer--brand {
-  font-size: 28.4px;
-  color: white;
-  display: flex;
-  justify-content: center;
-}
-
-.footer--links-div {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 7rem;
-  padding: 0;
-  width: 100%;
+	color: black;
 }
 
 .brand--details {
@@ -264,6 +248,7 @@ img {
 
 .btn-nav-sidebar {
   display: block;
+  padding-right: 10%;
 }
 
 .nav-heading-with-btn {
